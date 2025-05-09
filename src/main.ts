@@ -18,7 +18,9 @@ console.log(Ismail.getAge());
 /* console.log(Ismail.age);
 console.log(Ismail.lang); */
 
+//
 // Extend a class
+//
 class WebDev extends coder {
   constructor(
     public computer: string,
@@ -37,5 +39,32 @@ class WebDev extends coder {
 const mirza = new WebDev("Mac", "Mirza", "Lofi", 23);
 
 console.log(mirza.getLang());
-console.log(mirza.age);
+/* console.log(mirza.age);
 console.log(mirza.lang);
+ */
+
+//
+// Implement an interface to a class
+//
+
+interface Musician {
+  name: string;
+  instrument?: string;
+  play(action: string): string;
+}
+
+class Guitarist implements Musician {
+  name: string;
+  instrument: string;
+  constructor(name: string, instrument: string) {
+    this.name = name;
+    this.instrument = instrument;
+  }
+
+  play(action: string): string {
+    return `${this.name} ${action} the ${this.instrument}`;
+  }
+}
+
+const Page = new Guitarist("Jimmy", "guitar");
+console.log(Page.play("strums"));

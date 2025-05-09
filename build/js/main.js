@@ -15,7 +15,9 @@ const Ismail = new coder("Ismail", "Indie", 26);
 console.log(Ismail.getAge());
 /* console.log(Ismail.age);
 console.log(Ismail.lang); */
+//
 // Extend a class
+//
 class WebDev extends coder {
     constructor(computer, name, music, age) {
         super(name, music, age);
@@ -28,3 +30,14 @@ class WebDev extends coder {
 }
 const mirza = new WebDev("Mac", "Mirza", "Lofi", 23);
 console.log(mirza.getLang());
+class Guitarist {
+    constructor(name, instrument) {
+        this.name = name;
+        this.instrument = instrument;
+    }
+    play(action) {
+        return `${this.name} ${action} the ${this.instrument}`;
+    }
+}
+const Page = new Guitarist("Jimmy", "guitar");
+console.log(Page.play("strums"));
